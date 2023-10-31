@@ -1,0 +1,22 @@
+<p>myc05 works!</p>
+<hr>
+<div>用戶名：{{uname}}</div>
+<div>年齡：{{age}}</div>
+<div>後年年齡：{{age+2}}</div>
+<div>成年了嗎：{{age>=18}}</div>
+<div>成年了嗎：{{age>=18 ? '成年':'未成年'}}</div>
+<div>在法定工作年齡嗎：{{age>=18 && age<60}}</div>
+<div>用戶名長度：{{uname.length}}</div>
+<div>用戶名大寫形式：{{uname.toUpperCase()}}</div>
+<div>用戶名中下標為2的字符：{{uname[2]}}</div>
+<!--創建對象Object NG表達式中禁止出現new關鍵字
+還有JSON序列化不可以進行HTML綁定 NG表達式中JSON是undefined-->
+
+<hr>
+<!--①直接在屬性上用{{}}-->
+<p title="{{uname}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid eos fugiat, fugit laudantium voluptas! Aperiam, atque excepturi, hic inventore molestias nisi officia provident quia, reprehenderit saepe sapiente sit tempore?</p>
+<!--直接使用[]做屬性綁定-->
+<p [title]="uname">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid eos fugiat, fugit laudantium voluptas! Aperiam, atque excepturi, hic inventore molestias nisi officia provident quia, reprehenderit saepe sapiente sit tempore?</p>
+
+<hr>
+<button (click) = "printUname()">輸出用戶名</button>

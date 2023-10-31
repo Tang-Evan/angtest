@@ -1,0 +1,24 @@
+<div class="login">
+  <h1>登錄</h1>
+  <p>用戶名：</p>
+  <input type="text" [(ngModel)]="uaccount" placeholder="Enter User Account"><br>
+
+  <p>密碼：</p>
+  <input type="password" [(ngModel)]="upwd" placeholder="Enter Password"><br>
+
+  <input type="button" (click)="loginUser(uaccount,upwd)" value="登入">
+  <a routerLink="/register">注冊</a> |
+  <a routerLink="/forgot-password">忘記密碼</a>
+
+  <div class="modal" *ngIf="showSuccessModal">
+    <h2>成功提示</h2>
+    <p>{{ successMessage }}</p>
+    <button (click)="closeSuccessModal()">關閉</button>
+  </div>
+
+  <div class="modal" *ngIf="showErrorModal">
+    <h2>錯誤提示</h2>
+    <p>{{ errorMessage }}</p>
+    <button (click)="closeErrorModal()">關閉</button>
+  </div>
+</div>

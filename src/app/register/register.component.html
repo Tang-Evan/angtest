@@ -1,0 +1,29 @@
+<div class="register">
+  <h1>注冊界面</h1>
+
+  <label for="uaccount">輸入用戶名:</label>
+  <input type="text" [(ngModel)]="uaccount" (blur)="checkAccount()" id="uaccount" name="uaccount">
+  <div *ngIf="accountMessage">{{ accountMessage.message }}</div>
+  <br>
+
+  <label for="upwd">輸入密碼:</label>
+  <input type="password" [(ngModel)]="upwd" id="upwd" name="upwd"><br>
+  <br>
+
+  <label for="umail">輸入郵箱:</label>
+  <input type="email" [(ngModel)]="umail" id="umail" name="umail" ><br>
+
+  <input type="button" (click)="registerUser(uaccount, upwd, umail)" value="注冊">
+
+  <div class="modal" *ngIf="showSuccessModal">
+    <h2>成功提示</h2>
+    <p>{{ successMessage }}</p>
+    <button (click)="closeSuccessModal()">關閉</button>
+  </div>
+
+  <div class="modal" *ngIf="showErrorModal">
+    <h2>錯誤提示</h2>
+    <p>{{ errorMessage }}</p>
+    <button (click)="closeErrorModal()">關閉</button>
+  </div>
+</div>
